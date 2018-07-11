@@ -10,7 +10,7 @@ scheduler = BlockingScheduler()
 q = Queue(connection=conn)
 
 
-@scheduler.scheduled_job('interval', minutes=1)
+@scheduler.scheduled_job('interval', minutes=5)
 def retrieve_current_price_job():
     q.enqueue(retrieve_current_price, endpoint)
 
